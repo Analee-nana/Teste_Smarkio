@@ -29,12 +29,12 @@ Após isso, o banco de dados estará criado, portanto agora precisamos configura
 - Configurando o Text to Speech:
 Após criar uma conta gratuita na [IBM Watson - Text to Speech](https://www.ibm.com/br-pt/cloud/watson-text-to-speech?p1=Search&p4=43700052743483225&p5=e&gclid=Cj0KCQjwo-aCBhC-ARIsAAkNQisQigIl8DZU1IxUQzaU4lrxYYDyzYz-BfyRJSemezdum_k_bBfnj_MaAi1ZEALw_wcB&gclsrc=aw.ds), vá até a pasta models/text_to_speech e coloque a sua apikey e serviceUrl (fornecida pela IBM):
 
- const textToSpeech = new TextToSpeechV1({
-            authenticator: new IamAuthenticator({
-                apikey: '',
-            }),
-            serviceUrl: '',
-        });
+	 const textToSpeech = new TextToSpeechV1({
+		    authenticator: new IamAuthenticator({
+			apikey: '',
+		    }),
+		    serviceUrl: '',
+		});
 	
 - Antes de iniciar a aplicação:
 Crie uma pasta, com o nome sound na pasta principal(Teste_Smarkio), que será o local que irá receber os áudios que serão criados.
