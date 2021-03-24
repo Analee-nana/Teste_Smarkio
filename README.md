@@ -35,9 +35,6 @@ Após criar uma conta gratuita na [IBM Watson - Text to Speech](https://www.ibm.
 		    }),
 		    serviceUrl: '',
 		});
-	
-- Antes de iniciar a aplicação:
-Crie uma pasta, com o nome sound na pasta principal(Teste_Smarkio), que será o local que irá receber os áudios que serão criados.
 
 - Para iniciar:
 Na pasta principal(Teste_Smarkio), digite npm start para iniciar a aplicação no browser, na porta 3000.
