@@ -1,33 +1,33 @@
 # Teste Smarkio - IBM Watson
-Criei uma p·gina web que apresenta:
-- Do lado esquerdo, um TextBox onde vocÈ pode escrever seus comentarios e ao clicar no bot„o Cadastrar vocÍ envia seu coment·rio ao banco de dados(MySQL);
-- Do lado direito, podemos verificar uma lista de coment·rios (obtido quando a p·gina È carregada e quando È cadastrado um novo coment·rio), juntamente com um bot„o Ouvir, que quando clicado emite o som do coment·rio.
+Criei uma p√°gina web que apresenta:
+Do lado esquerdo, um TextBox onde voc√© pode escrever seus comentarios e ao clicar no bot√£o Cadastrar voc√™ envia seu coment√°rio ao banco de dados(MySQL);
+Do lado direito, podemos verificar uma lista de coment√°rios (obtido quando a p√°gina √© carregada e quando √© cadastrado um novo coment√°rio), juntamente com um bot√£o Ouvir, que quando clicado emite o som do coment√°rio.
 
-#Frameworks utilizados:
+ - Frameworks utilizados:
 [Node.js](https://nodejs.org/en/)
 [MySQL](https://www.mysql.com/)
 
-#API utilizada:
+ - API utilizada:
 [IBM Watson - Text to Speech](https://www.ibm.com/br-pt/cloud/watson-text-to-speech?p1=Search&p4=43700052743483225&p5=e&gclid=Cj0KCQjwo-aCBhC-ARIsAAkNQisQigIl8DZU1IxUQzaU4lrxYYDyzYz-BfyRJSemezdum_k_bBfnj_MaAi1ZEALw_wcB&gclsrc=aw.ds)
 
-#ConfiguraÁ„o 
-- ApÛs instalado o [Node.js](https://nodejs.org/en/) e [MySQL](https://www.mysql.com/), abra o MYSQL, entre no seu servidor local, faÁa uma nova query e digite:
+ - Configura√ß√£o:
+Ap√≥s instalado o [Node.js](https://nodejs.org/en/) e [MySQL](https://www.mysql.com/), abra o MYSQL, entre no seu servidor local, fa√ßa uma nova query e digite:
 
-CREATE DATABASE IF NOT EXISTS cadastro_comentarios;
+	CREATE DATABASE IF NOT EXISTS cadastro_comentarios;
 
-- ApÛs isso, o banco de dados estar· criado, portanto agora precisamos configurar a conex„o do seu servidor, na pasta infraestrutura/conexao.js:
+Ap√≥s isso, o banco de dados estar√° criado, portanto agora precisamos configurar a conex√£o do seu servidor, na pasta infraestrutura/conexao.js:
 
-const conexao = mysql.createConnection({
-	host: 'localhost',
-	port: 3306,
-	user: 'root',
-	password: 'root',
-	database: 'cadastro_comentarios'
-});
+	const conexao = mysql.createConnection({
+		host: 'localhost',
+		port: 3306,
+		user: 'root',
+		password: 'root',
+		database: 'cadastro_comentarios'
+	});
 
 
-#Configurando o Text to Speech
- - ApÛs criar uma conta gratuita na [IBM Watson - Text to Speech](https://www.ibm.com/br-pt/cloud/watson-text-to-speech?p1=Search&p4=43700052743483225&p5=e&gclid=Cj0KCQjwo-aCBhC-ARIsAAkNQisQigIl8DZU1IxUQzaU4lrxYYDyzYz-BfyRJSemezdum_k_bBfnj_MaAi1ZEALw_wcB&gclsrc=aw.ds), v· atÈ a pasta models/text_to_speech e coloque a sua apikey e serviceUrl (fornecida pela IBM):
+- Configurando o Text to Speech:
+Ap√≥s criar uma conta gratuita na [IBM Watson - Text to Speech](https://www.ibm.com/br-pt/cloud/watson-text-to-speech?p1=Search&p4=43700052743483225&p5=e&gclid=Cj0KCQjwo-aCBhC-ARIsAAkNQisQigIl8DZU1IxUQzaU4lrxYYDyzYz-BfyRJSemezdum_k_bBfnj_MaAi1ZEALw_wcB&gclsrc=aw.ds), v√° at√© a pasta models/text_to_speech e coloque a sua apikey e serviceUrl (fornecida pela IBM):
 
  const textToSpeech = new TextToSpeechV1({
             authenticator: new IamAuthenticator({
@@ -35,9 +35,12 @@ const conexao = mysql.createConnection({
             }),
             serviceUrl: '',
         });
+	
+- Antes de iniciar a aplica√ß√£o:
+Crie uma pasta, com o nome sound na pasta principal(Teste_Smarkio), que ser√° o local que ir√° receber os √°udios que ser√£o criados.
 
-#Para iniciar
-Na pasta principal(Teste_Smarkio), digite npm start para iniciar a aplicaÁ„o no browser, na porta 3000.
+- Para iniciar:
+Na pasta principal(Teste_Smarkio), digite npm start para iniciar a aplica√ß√£o no browser, na porta 3000.
 
 
 
